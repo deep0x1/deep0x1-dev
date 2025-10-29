@@ -1,0 +1,37 @@
+:root {
+  color-scheme: dark light;
+
+  // background
+  --bg-900: light-dark(#f5f3f3, #0c0a0a);
+  --bg-500: light-dark(#ececec, #131313);
+  --bg-100: light-dark(#e6e6e6, #191919);
+
+  // foreground
+  --fg-900: light-dark(#050505, #fafafa);
+  --fg-500: light-dark(#8c8c8c, #737373);
+  --fg-100: light-dark(#5e5e5e, #a1a1a1);
+
+  // grid
+  --gr-900: light-dark(#cbcbcd, #313135);
+  --gr-100: light-dark(#e0e0e0, #1f1f1f);
+
+  // github chart
+  --gh-900: light-dark(#5e5e5e, #a1a1a1);
+  --gh-700: light-dark(#7e7e7e, #818181);
+  --gh-500: light-dark(#9f9f9f, #606060);
+  --gh-300: light-dark(#bfbfbf, #404040);
+  --gh-100: light-dark(#e0e0e0, #1f1f1f);
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  padding: 2rem 1rem;
+  
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
