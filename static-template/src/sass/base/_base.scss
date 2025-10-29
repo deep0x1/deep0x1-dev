@@ -30,8 +30,18 @@ html {
 body {
   width: 100%;
   padding: 2rem 1rem;
-  
+
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 48.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }
