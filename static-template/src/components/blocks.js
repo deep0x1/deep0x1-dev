@@ -45,7 +45,7 @@ export default class Blocks {
     lineElem.setAttribute("y2", "0.5");
     lineElem.setAttribute("stroke", "currentColor");
     lineElem.setAttribute("stroke-width", "1");
-    lineElem.setAttribute("stroke-dasharray", "8, 8");
+    lineElem.setAttribute("stroke-dasharray", "6, 6");
     lineElem.setAttribute("vector-effect", "non-scaling-stroke");
 
     // append line to svg
