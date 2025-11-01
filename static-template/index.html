@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -13,11 +13,11 @@
   <div class="container">
     <div class="container__svg">
       <svg data-direction="left" width="1" height="100%" viewBox="0 0 1 100" preserveAspectRatio="none">
-        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="8 8"
+        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="6 6"
           vector-effect="non-scaling-stroke"></line>
       </svg>
       <svg data-direction="right" width="1" height="100%" viewBox="0 0 1 100" preserveAspectRatio="none">
-        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="8 8"
+        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="6 6"
           vector-effect="non-scaling-stroke"></line>
       </svg>
     </div>
@@ -29,22 +29,38 @@
           <div class="nav__name">Dipankar Singh</div>
           <div class="nav__headline">Self taught almost at everything.</div>
         </div>
-        <ul class="nav__links">
-          <li class="nav__link"><a href="/">Home</a></li>
-          <li class="nav__link"><a href="/">Projects</a></li>
-          <li class="nav__link"><a href="/">Blogs</a></li>
-          <li class="nav__link"><a href="/">Resume</a></li>
-          <li class="nav__link">
-            <button class="nav__theme_btn">
-              <img src="./src/assets/icons/sun.svg" alt="sun icon" class="nav__theme_btn--sun">
-              <img src="./src/assets/icons/moon.svg" alt="moon icon" class="nav__theme_btn--moon">
-            </button>
-          </li>
-        </ul>
-        <button class="nav__toggle_btn">
-          <img src="./src/assets/icons/bars.svg" alt="bars icon" class="nav__toggle--bar">
-        </button>
       </div>
+      <ul class="nav__links">
+        <li class="nav__link active"><a href="/">Home</a></li>
+        <li class="nav__link"><a href="/">Projects</a></li>
+        <li class="nav__link"><a href="/">Blogs</a></li>
+        <li class="nav__link"><a href="/">Resume</a></li>
+        <li class="nav__link">
+          <button class="nav__theme_btn">
+            <img src="./src/assets/icons/sun.svg" alt="sun icon" class="nav__theme_btn--sun">
+            <img src="./src/assets/icons/moon.svg" alt="moon icon" class="nav__theme_btn--moon">
+          </button>
+        </li>
+      </ul>
+      <button class="nav__toggle_btn active">
+        <img src="./src/assets/icons/bars.svg" alt="bars icon" class="nav__toggle--bar">
+        <img src="./src/assets/icons/cross.svg" alt="bars icon" class="nav__toggle--cross">
+      </button>
+    </nav>
+
+    <nav class="nav_mobile block block-fs active" id="navbar-mobile">
+      <ul class="nav__links">
+        <li class="nav__link active"><a href="/">Home</a></li>
+        <li class="nav__link"><a href="/">Projects</a></li>
+        <li class="nav__link"><a href="/">Blogs</a></li>
+        <li class="nav__link"><a href="/">Resume</a></li>
+        <li class="nav__link">
+          <button class="nav__theme_btn">
+            <img src="./src/assets/icons/sun.svg" alt="sun icon" class="nav__theme_btn--sun">
+            <img src="./src/assets/icons/moon.svg" alt="moon icon" class="nav__theme_btn--moon">
+          </button>
+        </li>
+      </ul>
     </nav>
 
   </div>

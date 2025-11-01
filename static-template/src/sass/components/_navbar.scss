@@ -1,0 +1,165 @@
+@use "../utils";
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__profile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.nav__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  color: var(--fg-900);
+}
+
+.nav__headline {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--fg-500);
+}
+
+.nav__links {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 1rem;
+
+  @include utils.mq("md") {
+    display: flex;
+  }
+}
+
+.nav__link {
+  a {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--fg-100);
+    text-decoration: none;
+  }
+
+  &:hover,
+  &.active {
+    a {
+      font-weight: 500;
+      color: var(--fg-900);
+    }
+  }
+}
+
+.nav__theme_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: var(--bg-500);
+
+  img.nav__theme_btn--sun {
+    display: block;
+    width: 1.25rem;
+  }
+
+  img.nav__theme_btn--moon {
+    display: none;
+    width: 1rem;
+  }
+}
+
+html[data-theme="light"] {
+  .nav__theme_btn {
+    img.nav__theme_btn--sun {
+      display: none;
+    }
+
+    img.nav__theme_btn--moon {
+      display: block;
+    }
+  }
+}
+
+.nav__toggle_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 100%;
+  background-color: var(--bg-500);
+
+  img.nav__toggle--bar {
+    display: block;
+    width: 1.25rem;
+  }
+
+  img.nav__toggle--cross {
+    display: none;
+    width: 0.75rem;
+  }
+
+  &.active {
+    img.nav__toggle--bar {
+      display: none;
+    }
+
+    img.nav__toggle--cross {
+      display: block;
+    }
+  }
+
+  @include utils.mq("md") {
+    display: none;
+  }
+}
+
+.nav_mobile {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .nav__links {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &.active {
+    display: flex;
+  }
+
+  @include utils.mq("md") {
+    display: none;
+    
+    &.active {
+      display: none;
+    }
+  }
+}
