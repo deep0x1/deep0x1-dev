@@ -1,0 +1,28 @@
+.block {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+}
+
+.block__svg {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+
+  width: 100%;
+  transform: translateX(-50%);
+  color: var(--gr-900);
+  z-index: 100;
+
+  &[data-direction="top"] {
+    top: 0;
+  }
+
+  &[data-direction="bottom"] {
+    bottom: 0;
+  }
+
+  &[data-variant="full-screen"] {
+    width: 100vw;
+  }
+}
