@@ -67,6 +67,43 @@ body {
   overflow-x: hidden;
 }
 
+// theme transation
+$animation-duration: 500ms;
+
+html.is-changing-theme::view-transition-group(root) {
+  animation-duration: #{$animation-duration};
+}
+
+html.is-changing-theme::view-transition-old(root) {
+  animation: none;
+}
+
+html.is-changing-theme::view-transition-new(root) {
+  animation: #{$animation-duration} ease-in-out both reveal-in;
+}
+
+html.is-changing-theme[data-direction="reverse"]::view-transition-new(root) {
+  animation: #{$animation-duration} ease-in-out both reveal-out;
+}
+
+@keyframes reveal-in {
+  from {
+    clip-path: polygon(0 0, 0 0, 0% 0);
+  }
+  to {
+    clip-path: polygon(0 0, 0 200%, 200% 0);
+  }
+}
+
+@keyframes reveal-out {
+  from {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+  }
+  to {
+    clip-path: polygon(100% 100%, 100% -100%, -100% 100%);
+  }
+}
+
 .container {
   position: relative;
 
