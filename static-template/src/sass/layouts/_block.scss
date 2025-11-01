@@ -2,6 +2,9 @@
   position: relative;
   width: 100%;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .block__svg {
@@ -24,5 +27,48 @@
 
   &[data-variant="full-screen"] {
     width: 100vw;
+  }
+}
+
+.gap-block {
+  height: 2rem;
+}
+
+.gap-block--big {
+  height: 4rem;
+}
+
+.heading-block {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.block-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--fg-900);
+}
+
+.block-extra {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.block-href {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--fg-100);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--fg-900);
+    text-decoration: underline;
+    text-decoration-style: wavy;
   }
 }

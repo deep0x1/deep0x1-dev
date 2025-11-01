@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
   outline: none;
   border: none;
 }

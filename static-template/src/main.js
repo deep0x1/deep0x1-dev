@@ -1,4 +1,6 @@
 import './sass/main.scss';
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
 
 // import components
 import Blocks from './components/blocks';
