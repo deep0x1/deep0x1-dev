@@ -48,8 +48,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
+  
+  @include utils.mq("md") {
+    align-items: flex-end;
+  }
 }
 
 .footer-header__link {
