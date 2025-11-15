@@ -1,0 +1,13 @@
+.block-href {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--fg-100);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--fg-900);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
+}
