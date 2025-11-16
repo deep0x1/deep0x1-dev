@@ -63,11 +63,11 @@
   text-decoration: none;
   color: var(--fg-100);
   
-  img {
+  svg {
+    stroke-width: 0;
     width: 0.5rem;
     height: 0.5rem;
-    object-fit: contain;
-    object-position: center;
+    stroke: var(--fg-100);
   }
 
   &:hover {

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>deep0x1-dev</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="container__svg">
+      <svg data-direction="left" width="1" height="100%" viewBox="0 0 1 100" preserveAspectRatio="none">
+        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="6 6"
+          vector-effect="non-scaling-stroke"></line>
+      </svg>
+      <svg data-direction="right" width="1" height="100%" viewBox="0 0 1 100" preserveAspectRatio="none">
+        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="6 6"
+          vector-effect="non-scaling-stroke"></line>
+      </svg>
+    </div>
+
+    <!-- navbar -->
+    <nav class="nav block block-fs" id="navbar">
+      <div class="nav__profile">
+        <div class="nav__meta">
+          <div class="nav__name">Dipankar Singh</div>
+          <div class="nav__headline">Self taught almost at everything.</div>
+        </div>
+      </div>
+      <ul class="nav__links">
+        <li class="nav__link active"><a href="/">Home</a></li>
+        <li class="nav__link"><a href="/">Projects</a></li>
+        <li class="nav__link"><a href="/blogs">Blogs</a></li>
+        <li class="nav__link"><a href="/">Resume</a></li>
+        <li class="nav__link">
+          <button class="nav__theme_btn">
+            <img src="./src/assets/icons/sun.svg" alt="sun icon" class="nav__theme_btn--sun">
+            <img src="./src/assets/icons/moon.svg" alt="moon icon" class="nav__theme_btn--moon">
+          </button>
+        </li>
+      </ul>
+      <button class="nav__toggle_btn" id="navbar-toggle">
+        <img src="./src/assets/icons/bars.svg" alt="bars icon" class="nav__toggle--bar">
+        <img src="./src/assets/icons/cross.svg" alt="bars icon" class="nav__toggle--cross">
+      </button>
+    </nav>
+
+    <nav class="nav_mobile block block-fs" id="navbar-mobile">
+      <ul class="nav__links">
+        <li class="nav__link active"><a href="/">Home</a></li>
+        <li class="nav__link"><a href="/">Projects</a></li>
+        <li class="nav__link"><a href="/">Blogs</a></li>
+        <li class="nav__link"><a href="/">Resume</a></li>
+        <li class="nav__link">
+          <button class="nav__theme_btn">
+            <img src="./src/assets/icons/sun.svg" alt="sun icon" class="nav__theme_btn--sun">
+            <img src="./src/assets/icons/moon.svg" alt="moon icon" class="nav__theme_btn--moon">
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="block gap-block"></div>
+
+    <div class="block block-fs heading-block">
+      <div class="block-title">BLOGS</div>
+      <div class="block-extra"><a href="#" class="block-href">view all</a></div>
+    </div>
+
+    <div class="block">
+      <p class="block-p">Below is a selection of my articles on software engineering, design, and technology. Each post
+        is an attempt to share knowledge and clarify complex topics. I invite you to read through my thoughts and see
+        what I've been working on.</p>
+    </div>
+
+    <div class="block search-block">
+      <div class="search-block__container">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M6.59534 1.522C5.24981 1.522 3.95938 2.05651 3.00795 3.00795C2.05651 3.95938 1.522 5.24981 1.522 6.59534C1.522 7.94087 2.05651 9.2313 3.00795 10.1827C3.95938 11.1342 5.24981 11.6687 6.59534 11.6687C7.94087 11.6687 9.2313 11.1342 10.1827 10.1827C11.1342 9.2313 11.6687 7.94087 11.6687 6.59534C11.6687 5.24981 11.1342 3.95938 10.1827 3.00795C9.2313 2.05651 7.94087 1.522 6.59534 1.522ZM0 6.59534C0 4.84615 0.694864 3.1686 1.93173 1.93173C3.1686 0.694864 4.84615 0 6.59534 0C8.34453 0 10.0221 0.694864 11.259 1.93173C12.4958 3.1686 13.1907 4.84615 13.1907 6.59534C13.1907 8.34453 12.4958 10.0221 11.259 11.259C10.0221 12.4958 8.34453 13.1907 6.59534 13.1907C4.84615 13.1907 3.1686 12.4958 1.93173 11.259C0.694864 10.0221 0 8.34453 0 6.59534Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M10.6236 10.6236C10.7663 10.4811 10.9597 10.401 11.1613 10.401C11.363 10.401 11.5564 10.4811 11.6991 10.6236L15.7578 14.6822C15.8326 14.7519 15.8925 14.8359 15.9341 14.9293C15.9757 15.0226 15.9981 15.1234 15.9999 15.2256C16.0017 15.3278 15.9829 15.4293 15.9446 15.524C15.9063 15.6188 15.8494 15.7048 15.7771 15.7771C15.7048 15.8494 15.6188 15.9063 15.524 15.9446C15.4293 15.9829 15.3278 16.0017 15.2256 15.9999C15.1234 15.9981 15.0226 15.9757 14.9293 15.9341C14.8359 15.8925 14.7519 15.8326 14.6822 15.7578L10.6236 11.6991C10.4811 11.5564 10.401 11.363 10.401 11.1613C10.401 10.9597 10.4811 10.7663 10.6236 10.6236Z"
+            fill="currentColor" />
+        </svg>
+        <input type="text" name="blog-search" id="blog-search" class="search-block__input" placeholder="Search Blogs...">
+      </div>
+    </div>
+
+    <div class="block">
+      <ul class="list-block">
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 14, 2025</div>
+            <div class="block-blog-card__title">Demystifying Server Components: A Deep Dive into Next.js 14</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 07, 2025</div>
+            <div class="block-blog-card__title">Building a Performant Autocomplete Search in React with a Trie Data
+              Structure</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 31, 2025</div>
+            <div class="block-blog-card__title">What Building a Full-Stack App Taught Me About System Design</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 26, 2025</div>
+            <div class="block-blog-card__title">State Management Simplified: Why I Moved from Redux to Zustand</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 11, 2025</div>
+            <div class="block-blog-card__title">A Visual Guide to Hash Tables and Their Role in Modern Web Apps</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 14, 2025</div>
+            <div class="block-blog-card__title">Demystifying Server Components: A Deep Dive into Next.js 14</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 07, 2025</div>
+            <div class="block-blog-card__title">Building a Performant Autocomplete Search in React with a Trie Data
+              Structure</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 31, 2025</div>
+            <div class="block-blog-card__title">What Building a Full-Stack App Taught Me About System Design</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 26, 2025</div>
+            <div class="block-blog-card__title">State Management Simplified: Why I Moved from Redux to Zustand</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 11, 2025</div>
+            <div class="block-blog-card__title">A Visual Guide to Hash Tables and Their Role in Modern Web Apps</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 14, 2025</div>
+            <div class="block-blog-card__title">Demystifying Server Components: A Deep Dive into Next.js 14</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 07, 2025</div>
+            <div class="block-blog-card__title">Building a Performant Autocomplete Search in React with a Trie Data
+              Structure</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 31, 2025</div>
+            <div class="block-blog-card__title">What Building a Full-Stack App Taught Me About System Design</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 26, 2025</div>
+            <div class="block-blog-card__title">State Management Simplified: Why I Moved from Redux to Zustand</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 11, 2025</div>
+            <div class="block-blog-card__title">A Visual Guide to Hash Tables and Their Role in Modern Web Apps</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 14, 2025</div>
+            <div class="block-blog-card__title">Demystifying Server Components: A Deep Dive into Next.js 14</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Nov 07, 2025</div>
+            <div class="block-blog-card__title">Building a Performant Autocomplete Search in React with a Trie Data
+              Structure</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 31, 2025</div>
+            <div class="block-blog-card__title">What Building a Full-Stack App Taught Me About System Design</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 26, 2025</div>
+            <div class="block-blog-card__title">State Management Simplified: Why I Moved from Redux to Zustand</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="block-li block-blog-card">
+          <div class="block-blog-card__body">
+            <div class="block-blog-card__meta">Oct 11, 2025</div>
+            <div class="block-blog-card__title">A Visual Guide to Hash Tables and Their Role in Modern Web Apps</div>
+          </div>
+          <div class="block-blog-card__icon">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.636364 12C0.552904 12.0009 0.470154 11.9854 0.393436 11.9544C0.316719 11.9235 0.247731 11.8777 0.190909 11.8201C-0.0636364 11.5804 -0.0636364 11.2088 0.190909 10.969L5.47273 5.99398L0.190909 1.03097C-0.0636364 0.791206 -0.0636364 0.419579 0.190909 0.17982C0.445455 -0.0599399 0.84 -0.0599399 1.09455 0.17982L6.80909 5.58639C7.06364 5.82615 7.06364 6.19778 6.80909 6.43754L1.08182 11.8201C0.954545 11.94 0.789091 12 0.636364 12Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+        </a>
+      </ul>
+    </div>
+
+    <div class="block gap-block--big"></div>
+
+    <footer class="block block-fs footer" id="footer">
+      <div class="footer-header">
+        <div class="footer-header__heading">Deep0x1</div>
+        <div class="footer-header__body">
+          <div class="footer-header__content">
+            <a href="#" class="footer-header__link">Design and code by Dipankar Singh</a>
+            <a href="#" class="footer-header__link">Source code at GitHub <img src="./src/assets/icons/redirect.svg"
+                alt="redirect"></a>
+            <a href="#" class="footer-header__link">Follow via RSS <img src="./src/assets/icons/redirect.svg"
+                alt="redirect"></a>
+          </div>
+          <div class="footer-header__socials">
+            <a href="#" class="footer-header__link">dipankar@deep0x1.dev <img src="./src/assets/icons/redirect.svg"
+                alt="redirect"></a>
+            <a href="#" class="footer-header__link">GitHub <img src="./src/assets/icons/redirect.svg"
+                alt="redirect"></a>
+            <a href="#" class="footer-header__link">LinkedIn <img src="./src/assets/icons/redirect.svg"
+                alt="redirect"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-foot">
+        <div class="footer-foot__copyright">© 2025</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

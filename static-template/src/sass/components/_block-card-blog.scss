@@ -39,8 +39,9 @@
   align-items: center;
   justify-content: center;
 
-  img {
+  svg {
     height: .75rem;
-    object-fit: contain;
+    color: var(--fg-900);
+    stroke-width: 0;
   }
 }
