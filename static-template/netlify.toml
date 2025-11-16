@@ -5,6 +5,11 @@
   functions = "netlify/functions"
 
 [[redirects]]
+  from = "/projects"
+  to = "/projects.html"
+  status = 200
+
+[[redirects]]
   from = "/blogs"
   to = "/blogs.html"
   status = 200

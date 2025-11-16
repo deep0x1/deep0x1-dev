@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         blogs: resolve(__dirname, 'blogs.html'),
+        projects: resolve(__dirname, 'projects.html'),
       },
     },
   },
