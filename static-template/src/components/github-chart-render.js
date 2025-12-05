@@ -104,9 +104,22 @@ export default class GitChartRenderer {
       viewbox: config.viewbox,
     });
 
+    // calculate dates
+    const today = new Date();
+    const daysToSat = 6 - today.getDay();
+    const nextSat = new Date(today.getTime() + daysToSat);
+    const firstDate = new Date(nextSat.getTime() - 371);
+    const currDate = new Date(firstDate.getTime());
+    
     // create boxes
     for (let col = 0; col < config.totalCols; col++) {
       for (let row = 0; row < 7; row++) {
+        // convert current date to str
+        const currDateStr = currDate.toISOString().split('T')[0]
+        // increment current date by 1
+        currDate.setDate(currDate.getDate() + 1);
+
+        // create cell element
         const cellElem = this._createElem("rect", {
           x: col * (config.cellSize + config.cellGap),
           y: row * (config.cellSize + config.cellGap),
@@ -114,7 +127,10 @@ export default class GitChartRenderer {
           height: config.cellSize,
           rx: config.cellRx,
           "data-level": 0,
+          "data-date": currDateStr,
         });
+        
+        // append cell to grid
         elem.appendChild(cellElem);
       }
     }
