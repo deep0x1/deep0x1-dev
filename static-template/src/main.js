@@ -13,7 +13,7 @@ const initApp = async () => {
   const blocks = new Blocks();
   const navbar = new Navbar();
   const blockCards = new BlockCards();
-  const gitChart = await GitChart.create("github", "deep0x1");
+  const gitChart = await GitChart.create("github-container", "deep0x1");
 };
 
 initApp();

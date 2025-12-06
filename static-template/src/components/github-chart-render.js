@@ -36,6 +36,11 @@ const createConfig = () => {
     y: 132,
     width: frame.width,
     height: 24,
+    text: {
+      x: 0,
+      y: 7.5,
+      dominantBaseline: "hanging"
+    },
     meta: {
       x: 598,
       y: 0,
@@ -63,10 +68,12 @@ export default class GitChartRenderer {
   renderSkeleton() {
     // create components
     this.svgElem = this._createFrame();
-    this.gridElem = this._createGrid();
+    const gridElem = this._createGrid();
+    const footerElem = this._createFooter();
 
     // append components
-    this.svgElem.appendChild(this.gridElem);
+    this.svgElem.appendChild(gridElem);
+    this.svgElem.appendChild(footerElem);
 
     // append svg
     this.container.appendChild(this.svgElem);
@@ -90,6 +97,7 @@ export default class GitChartRenderer {
       width: config.width,
       height: config.height,
       viewbox: config.viewbox,
+      class: "github-block__svg"
     });
     return elem;
   }
@@ -135,6 +143,28 @@ export default class GitChartRenderer {
       }
     }
 
+    return elem;
+  }
+
+  _createFooter() {
+    const config = this.config.footer;
+    const elem = this._createElem("svg", {
+      x: config.x,
+      y: config.y,
+      width: config.width,
+      height: config.height,
+      viewbox: config.viewbox,
+    });
+
+    const textElem = this._createElem("text", {
+      x: config.text.x,
+      y: config.text.y,
+      "dominant-baseline": config.text.dominantBaseline,
+    });
+    textElem.textContent = "142 contributions in 2025";
+
+    // append text to elem
+    elem.appendChild(textElem);
     return elem;
   }
 }
