@@ -32,6 +32,7 @@ const createConfig = () => {
     cellGap: 4,
     cellRx: 2,
     totalCols: 53,
+    class: "github__grid",
   };
   grid.viewbox = `0 0 ${grid.width} ${grid.height}`;
 
@@ -45,6 +46,7 @@ const createConfig = () => {
       x: 0,
       y: 7.5,
       dominantBaseline: "hanging",
+      class: "github__total-text",
     },
     meta: {
       x: 598,
@@ -127,13 +129,20 @@ export default class GitChartRenderer {
       width: config.width,
       height: config.height,
       viewbox: config.viewbox,
+      class: config.class,
     });
 
     // calculate dates
     const today = new Date();
     const daysToSat = 6 - today.getDay();
-    const nextSat = new Date(today.getTime() + daysToSat);
-    const firstDate = new Date(nextSat.getTime() - 371);
+
+    // calculate next saturaday
+    const nextSat = new Date(today);
+    nextSat.setDate(today.getDate() + daysToSat);
+    
+    // subtract 370 (including current date)
+    const firstDate = new Date(nextSat);
+    firstDate.setDate(nextSat.getDate() - 370);
     const currDate = new Date(firstDate.getTime());
 
     // create boxes
@@ -224,9 +233,10 @@ export default class GitChartRenderer {
     const textElem = this._createElem("text", {
       x: config.text.x,
       y: config.text.y,
+      class: config.text.class,
       "dominant-baseline": config.text.dominantBaseline,
     });
-    textElem.textContent = "142 contributions in 2025";
+    textElem.textContent = "Loading...";
 
     const metaElem = this._createElem("svg", {
       x: config.meta.x,
@@ -281,5 +291,22 @@ export default class GitChartRenderer {
     elem.appendChild(textElem);
     elem.appendChild(metaElem);
     return elem;
+  }
+
+  updateFooter(total) {
+    const config = this.config.footer;
+    const elem = this.svgElem.querySelector(`.${config.text.class}`);
+    const today = new Date();
+    const year = today.getFullYear();
+    elem.textContent = `${total} contributions in ${year}`;
+  }
+
+  updateGrid(contributions) {
+    const config = this.config.grid;
+    const rects = this.svgElem.querySelectorAll(`.${config.class} rect`);
+    rects.forEach((rect) => {
+      const date = rect.getAttribute("data-date");
+      rect.setAttribute("data-level", contributions[date]);
+    });
   }
 }

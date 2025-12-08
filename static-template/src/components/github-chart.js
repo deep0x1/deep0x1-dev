@@ -19,10 +19,42 @@ export default class GitChart {
   async _fetchAndPopulate() {
     try {
       // populate chart
-      const apiData = null;
-
+      const apiData = await this._fetchData();
+      const contributionsMap = this._processApiData(apiData);
+      this.renderer.updateFooter(contributionsMap.total);
+      this.renderer.updateGrid(contributionsMap.contributions);
     } catch (error) {
       console.error("Failed to populate chart: ", error);
     }
+  }
+
+  async _fetchData() {
+    const url = `https://github-contributions-api.jogruber.de/v4/${this.username}`;
+    let data = null;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      data = response.json();
+    } catch (error) {
+      console.error(error.message);
+    }
+
+    return data;
+  }
+
+  _processApiData(apiData) {
+    const today = new Date();
+    const year = today.getFullYear();
+
+    const contributions = {};
+    apiData.contributions.forEach((contribution) => {
+      // console.log(contribution.date);
+      contributions[contribution.date] = contribution.level;
+    });
+
+    const contributionsMap = { total: apiData.total[year], contributions };
+    return contributionsMap;
   }
 }
