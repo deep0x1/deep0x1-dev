@@ -14,6 +14,11 @@ const createConfig = () => {
     y: 0,
     width: frame.width,
     height: 24,
+    text: {
+      y: 7.5,
+      maxWidth: 22,
+      dominantBaseline: "hanging",
+    },
   };
   header.viewbox = `0 0 ${header.width} ${header.height}`;
 
@@ -47,7 +52,7 @@ const createConfig = () => {
       width: 140,
       height: 24,
       left: { x: 0, y: 7.5 },
-      range: { 
+      range: {
         x: 37,
         y: 7,
         width: 66,
@@ -72,16 +77,19 @@ export default class GitChartRenderer {
     this.container = container;
     this.config = { ...CONFIG, ...config };
     this.svgElem = null;
+    this.monthPos = {};
   }
 
   renderSkeleton() {
     // create components
     this.svgElem = this._createFrame();
     const gridElem = this._createGrid();
+    const headerElem = this._createHeader();
     const footerElem = this._createFooter();
 
     // append components
     this.svgElem.appendChild(gridElem);
+    this.svgElem.appendChild(headerElem);
     this.svgElem.appendChild(footerElem);
 
     // append svg
@@ -133,6 +141,13 @@ export default class GitChartRenderer {
       for (let row = 0; row < 7; row++) {
         // convert current date to str
         const currDateStr = currDate.toISOString().split("T")[0];
+
+        // if first of month push to monthPos
+        if (currDate.getDate() == 1) {
+          this.monthPos[currDate.getMonth()] =
+            col * (config.cellSize + config.cellGap);
+        }
+
         // increment current date by 1
         currDate.setDate(currDate.getDate() + 1);
 
@@ -151,6 +166,47 @@ export default class GitChartRenderer {
         elem.appendChild(cellElem);
       }
     }
+
+    return elem;
+  }
+
+  _createHeader() {
+    const config = this.config.header;
+    const elem = this._createElem("svg", {
+      x: config.x,
+      y: config.y,
+      width: config.width,
+      height: config.height,
+      viewbox: config.viewbox,
+    });
+
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    Object.entries(this.monthPos).forEach((entry) => {
+      const x = entry[1];
+      const frameWidth = config.width;
+      if (frameWidth - x <= config.text.maxWidth) return;
+
+      const textElem = this._createElem("text", {
+        x: entry[1],
+        y: config.text.y,
+        "dominant-baseline": config.text.dominantBaseline,
+      });
+      textElem.textContent = months[entry[0]];
+      elem.appendChild(textElem);
+    });
 
     return elem;
   }
@@ -202,7 +258,7 @@ export default class GitChartRenderer {
       height: rangeConfig.height,
       viewbox: rangeConfig.viewbox,
     });
-    
+
     // adding cells
     for (let i = 0; i < 5; i++) {
       let elem = this._createElem("rect", {
