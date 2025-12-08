@@ -36,7 +36,7 @@ export default class GitChart {
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-      data = response.json();
+      data = await response.json();
     } catch (error) {
       console.error(error.message);
     }
