@@ -39,7 +39,7 @@ const createConfig = () => {
     text: {
       x: 0,
       y: 7.5,
-      dominantBaseline: "hanging"
+      dominantBaseline: "hanging",
     },
     meta: {
       x: 598,
@@ -47,12 +47,21 @@ const createConfig = () => {
       width: 140,
       height: 24,
       left: { x: 0, y: 7.5 },
-      range: { x: 37, y: 7 },
+      range: { 
+        x: 37,
+        y: 7,
+        width: 66,
+        height: 10,
+        cellSize: grid.cellSize,
+        cellGap: grid.cellGap,
+        cellRx: grid.cellRx,
+      },
       right: { x: 111, y: 7.5 },
     },
   };
   footer.viewbox = `0 0 ${footer.width} ${footer.height}`;
   footer.meta.viewbox = `0 0 ${footer.meta.width} ${footer.meta.height}`;
+  footer.meta.range.viewbox = `0 0 ${footer.meta.range.width} ${footer.meta.range.height}`;
 
   return { frame, header, grid, footer };
 };
@@ -97,7 +106,7 @@ export default class GitChartRenderer {
       width: config.width,
       height: config.height,
       viewbox: config.viewbox,
-      class: "github-block__svg"
+      class: "github-block__svg",
     });
     return elem;
   }
@@ -118,12 +127,12 @@ export default class GitChartRenderer {
     const nextSat = new Date(today.getTime() + daysToSat);
     const firstDate = new Date(nextSat.getTime() - 371);
     const currDate = new Date(firstDate.getTime());
-    
+
     // create boxes
     for (let col = 0; col < config.totalCols; col++) {
       for (let row = 0; row < 7; row++) {
         // convert current date to str
-        const currDateStr = currDate.toISOString().split('T')[0]
+        const currDateStr = currDate.toISOString().split("T")[0];
         // increment current date by 1
         currDate.setDate(currDate.getDate() + 1);
 
@@ -137,7 +146,7 @@ export default class GitChartRenderer {
           "data-level": 0,
           "data-date": currDateStr,
         });
-        
+
         // append cell to grid
         elem.appendChild(cellElem);
       }
@@ -163,8 +172,58 @@ export default class GitChartRenderer {
     });
     textElem.textContent = "142 contributions in 2025";
 
+    const metaElem = this._createElem("svg", {
+      x: config.meta.x,
+      y: config.meta.y,
+      width: config.meta.width,
+      height: config.meta.height,
+      viewbox: config.meta.viewbox,
+    });
+
+    const leftMetaTextElem = this._createElem("text", {
+      x: config.meta.left.x,
+      y: config.meta.left.y,
+      "dominant-baseline": config.text.dominantBaseline,
+    });
+    leftMetaTextElem.textContent = "Less";
+
+    const rightMetaTextElem = this._createElem("text", {
+      x: config.meta.right.x,
+      y: config.meta.right.y,
+      "dominant-baseline": config.text.dominantBaseline,
+    });
+    rightMetaTextElem.textContent = "More";
+
+    const rangeConfig = config.meta.range;
+    const rangeMetaElem = this._createElem("svg", {
+      x: rangeConfig.x,
+      y: rangeConfig.y,
+      width: rangeConfig.width,
+      height: rangeConfig.height,
+      viewbox: rangeConfig.viewbox,
+    });
+    
+    // adding cells
+    for (let i = 0; i < 5; i++) {
+      let elem = this._createElem("rect", {
+        x: i * (rangeConfig.cellSize + rangeConfig.cellGap),
+        y: 0,
+        width: rangeConfig.cellSize,
+        height: rangeConfig.cellSize,
+        rx: rangeConfig.cellRx,
+        "data-level": i,
+      });
+      rangeMetaElem.appendChild(elem);
+    }
+
+    // append meta elements
+    metaElem.appendChild(leftMetaTextElem);
+    metaElem.appendChild(rangeMetaElem);
+    metaElem.appendChild(rightMetaTextElem);
+
     // append text to elem
     elem.appendChild(textElem);
+    elem.appendChild(metaElem);
     return elem;
   }
 }
